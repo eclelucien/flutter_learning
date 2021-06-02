@@ -17,13 +17,25 @@ class _HomePageState extends State<HomePage> {
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString("nome", valorDigitado);
+    _texto = _controllerTexto.text;
+    _controllerTexto.text = "";
 
     print("Operacão (salvar): $valorDigitado");
   }
 
-  _recuperar() {}
+  _recuperar() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _texto = prefs.getString("nome") ?? "Sem valor";
+    });
+  }
 
-  _remover() {}
+  _remover() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove("nome");
+    print("Foi remvido instantaneamente");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -44,7 +44,10 @@ class _HomePageState extends State<HomePage> {
               })
         ],
       ),
-      body: listas[_indiceAtual],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: listas[_indiceAtual],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceAtual,
         onTap: (indice) {

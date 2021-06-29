@@ -25,4 +25,19 @@ class Post {
   set id(int value) {
     _id = value;
   }
+  
+  //Usando shared preferences para persistir dados
+  //var  prefs = await SharedPreferences.getInstance();
+  //prefs.setString("tokenjwt", mapResponse["token"]);
+
+  //var prefs = await SharedPreferences.getInstance();
+  //String token = (prefs.getString("tokenjwt") ?? "")
+
+  //var header = {
+   // "Content-Type": "application/json",
+   // "Autorization": "Bearer $token"
+  //};
+  
+  
+  
 }

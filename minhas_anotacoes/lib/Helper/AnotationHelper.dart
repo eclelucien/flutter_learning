@@ -36,9 +36,4 @@ class AnotationHelper {
 
     return db;
   }
-
-  _salvarAnotacao() {
-    String titulo = _controllerTitulo.text;
-    String descricao = _controllerDescricao.text;
-  }
 }

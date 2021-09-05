@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: () {
                     //Salvar os dados
-
+                    _salvarAnotacao();
                     Navigator.pop(context);
                   },
                   child: Text("Save")),
@@ -49,6 +49,11 @@ class _HomePageState extends State<HomePage> {
             ],
           );
         });
+  }
+
+  _salvarAnotacao() {
+    String titulo = _controllerTitulo.text;
+    String descricao = _controllerDescricao.text;
   }
 
   @override

@@ -26,9 +26,8 @@ class _HomePageState extends State<HomePage> {
         "${diretorio.path}/dadoslista.json"); //aqui criamos uma pasta dentro daquela pasta e deixamos o nosso arquivo la
   }
 
-  _salvarTarefa() async {
+  _salvarTarefa() {
     String TextoDigitado = _controllerTarefa.text;
-
     Map<String, dynamic> tarefa = Map();
     tarefa["titulo"] = TextoDigitado;
     tarefa["realizada"] = false;
@@ -41,19 +40,16 @@ class _HomePageState extends State<HomePage> {
 
   _salvarArquivo() async {
     var arquivo = await _getFile();
-
     //criar dados
-
     String dados = json.encode(
         _lista); //aqui trnsformamos os dados da nossa lista em json e guardamos os resultados numa string
     arquivo.writeAsString(
-        dados); //aqui pegamos a string que contem as nossos dados em json e colocamos tudo no nosso arquivo
+        dados); //aqui pegamos a string que contem os nossos dados em json e colocamos tudo no nosso arquivo
   }
 
   _lerArquivo() async {
     try {
       final arquivo = await _getFile();
-
       return arquivo.readAsString();
     } catch (e) {
       return null;
